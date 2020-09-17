@@ -15,7 +15,7 @@ for (l = 48; l <= 57; l++)
 {
 for (m = 48; m <= 57; m++)
 {
-if (j < m)
+if (j < l && j < m)
 {
 putchar(i);
 putchar(j);
