@@ -1,1 +1,1 @@
-Learning boolean operators in C
+Learning Variables, if, else, while operators in C
