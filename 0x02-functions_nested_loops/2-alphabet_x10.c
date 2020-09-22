@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_alphabet_x10 - writes the character c to stdout
+ * print_alphabet_x10 - prints the alphabet to stdout
  *
  *
  * Return: On success 1.
@@ -8,14 +8,14 @@
  */
 void print_alphabet_x10(void)
 {
-int i, a;
+	int i, a;
 
-for (i = '0'; i <= '9' ; i++)
-{
-for (a = 'a' ; a <= 'z' ; a++)
-{
-_putchar(a);
-}
-_putchar('\n');
-}
+	for (i = '0'; i <= '9' ; i++)
+	{
+		for (a = 'a' ; a <= 'z' ; a++)
+		{
+			_putchar(a);
+		}
+		_putchar('\n');
+	}
 }
