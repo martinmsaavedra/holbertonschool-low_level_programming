@@ -7,7 +7,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-void main(void)
+int main(void)
 {
 	int a;
 	long f1, f2, fibo;
@@ -26,4 +26,5 @@ void main(void)
 		f2 = fibo;
 	}
 	printf("\n");
+	return (0);
 }
