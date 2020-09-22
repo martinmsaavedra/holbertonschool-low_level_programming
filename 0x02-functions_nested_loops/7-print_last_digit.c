@@ -1,12 +1,23 @@
 #include "holberton.h"
+/**
+ * print_last_digit - print last digit
+ * @n: The integer to calculate
+ *
+ * Return: @a
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 int print_last_digit(int n)
 {
-int ld;
-if (n < 0)
-{
-n = (n * -1);
-}
-ld = n % 10;
-_putchar(ld + '0');
-return (ld);
+	int a;
+
+	a = n % 10;
+
+	if (a < 0)
+	{
+		a = -a;
+	}
+
+	_putchar('0' + a);
+
+	return (a);
 }
