@@ -14,9 +14,13 @@ void main(void)
 
 	f1 = 1;
 	f2 = 2;
-	for (a = 0; a < 50; a++)
+	for (a = 0; a < 49; a++)
 	{
-		printf("%ld, ", f1);
+		printf("%ld", f1);
+		if ( a != 48)
+		{
+			printf(", ");
+		}
 		fibo = f1 + f2;
 		f1 = f2;
 		f2 = fibo;
