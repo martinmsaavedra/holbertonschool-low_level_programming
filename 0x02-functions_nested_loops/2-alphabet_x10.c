@@ -1,18 +1,16 @@
 #include "holberton.h"
 /**
- * print_alphabet_x10 - prints the alphabet to stdout
+ * print_alphabet_x10 - Entry point
  *
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: Always 0 (Success)
  */
 void print_alphabet_x10(void)
 {
-	int i, a;
-
-	for (i = '0'; i <= '9' ; i++)
+	int i;
+	for (i = '0'; i <= '9'; i++)
 	{
-		for (a = 'a' ; a <= 'z' ; a++)
+		char a;
+		for (a = 'a'; a <= 'z'; a++)
 		{
 			_putchar(a);
 		}
