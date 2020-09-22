@@ -13,12 +13,10 @@ int main(void)
 
 	f1 = 1;
 	f2 = 2;
-	printf("%ld, \n", f1);
-	printf("%ld, \n", f2);
 	for (a = 0; a < 48; a++)
 	{
+		printf("%ld, \n", f1);
 		fibo = f1 + f2;
-		printf("%ld, \n", fibo);
 		f1 = f2;
 		f2 = fibo;
 	}
