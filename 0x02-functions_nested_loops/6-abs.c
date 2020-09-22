@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _putchar - Prints absolute value c to stdout
+ * _abs - Prints absolute value c to stdout
  * @n: The integer to print
  *
  * Return: On success 1.
