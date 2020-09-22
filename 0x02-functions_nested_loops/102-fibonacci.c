@@ -7,7 +7,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int main(void)
+void main(void)
 {
 	long a, b, f1, f2, fibo;
 
@@ -20,5 +20,4 @@ int main(void)
 		f1 = f2;
 		f2 = fibo;
 	}
-	return (0);
 }
