@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * print_times_table - writes the tables to stdout
- * @n - 
+ * @n: total numbers of tables to be print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
