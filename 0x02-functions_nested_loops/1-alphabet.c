@@ -1,9 +1,11 @@
 #include "holberton.h"
-/**
- * main - Print alphabet
- *
- * Return: Always 0 (Success)
- */
+   /**
+   * print_aphabet - print alphabet
+   * 
+   *
+   * Return: On success 1.
+   * On error, -1 is returned, and errno is set appropriately.
+   */
 void print_alphabet(void)
 {
 char a;
