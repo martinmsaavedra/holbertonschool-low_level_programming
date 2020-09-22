@@ -1,4 +1,4 @@
-B#include "holberton.h"
+#include "holberton.h"
 /**
  * print_alphabet_x10 - writes the character c to stdout
  *
