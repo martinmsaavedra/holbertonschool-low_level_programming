@@ -11,7 +11,7 @@ void times_table(void)
 int a, b, res;
 for (a = 0; a < 10 ; a++)
 {
-if(a != 0)
+if (a != 0)
 {
 _putchar('0');
 _putchar(',');
