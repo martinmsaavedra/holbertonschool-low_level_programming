@@ -14,10 +14,10 @@ void main(void)
 
 	f1 = 1;
 	f2 = 2;
-	for (a = 0; a < 49; a++)
+	for (a = 0; a < 50; a++)
 	{
 		printf("%ld", f1);
-		if ( a != 48)
+		if ( a != 49)
 		{
 			printf(", ");
 		}
