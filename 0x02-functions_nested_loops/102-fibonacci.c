@@ -16,9 +16,10 @@ void main(void)
 	f2 = 2;
 	for (a = 0; a < 50; a++)
 	{
-		printf("%ld, \n", f1);
+		printf("%ld, ", f1);
 		fibo = f1 + f2;
 		f1 = f2;
 		f2 = fibo;
 	}
+	printf("\n");
 }
