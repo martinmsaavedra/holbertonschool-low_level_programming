@@ -9,11 +9,12 @@
  */
 void main(void)
 {
-	long a, b, f1, f2, fibo;
+	int a;
+	long f1, f2, fibo;
 
 	f1 = 1;
 	f2 = 2;
-	for (a = 0; a < 48; a++)
+	for (a = 0; a < 50; a++)
 	{
 		printf("%ld, \n", f1);
 		fibo = f1 + f2;
