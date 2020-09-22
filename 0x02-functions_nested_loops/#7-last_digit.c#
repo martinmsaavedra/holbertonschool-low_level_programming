@@ -3,7 +3,7 @@
  * print_last_digit - print last digit
  * @n: The integer to calculate
  *
- * Return: @a
+ * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
 int print_last_digit(int n)
