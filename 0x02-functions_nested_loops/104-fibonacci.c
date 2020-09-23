@@ -10,13 +10,13 @@
 int main(void)
 {
 	int a;
-	unsigned long f1, f2, fibo;
+	long f1, f2, fibo;
 
 	f1 = 1;
 	f2 = 2;
 	for (a = 0; a < 98; a++)
 	{
-		printf("%lux", f1);
+		printf("%#lx", f1);
 		if (a != 97)
 		{
 			printf(", ");
