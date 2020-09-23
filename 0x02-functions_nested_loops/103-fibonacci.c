@@ -15,7 +15,7 @@ int main(void)
 	total = 0;
 	f1 = 1;
 	f2 = 2;
-	while (f1 < 4000000)
+	for (a = 1 ; a < 34 ; a++)
 	{
 		if (f1 % 2 == 0)
 		{
