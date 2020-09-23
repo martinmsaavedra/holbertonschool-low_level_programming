@@ -10,23 +10,21 @@
 int main(void)
 {
 	int a;
-	long f1, f2, fibo;
+	long f1, f2, fibo, total;
 
 	f1 = 1;
 	f2 = 2;
-	for (a = 0; a < 34; a++)
+	for (a = 1; a < 34; a++)
 	{
 		if (f1 % 2 == 0)
 		{
-			printf("%ld", f1);
-			if (a < 30)
-			{
-				printf(", ");
-			}}
+			total += f1;
+		}
 		fibo = f1 + f2;
 		f1 = f2;
 		f2 = fibo;
 	}
+	printf("%ld", total);
 	printf("\n");
 	return (0);
 }
