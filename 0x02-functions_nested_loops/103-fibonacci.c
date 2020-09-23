@@ -19,7 +19,7 @@ int main(void)
 		if (f1 % 2 == 0)
 		{
 			printf("%ld", f1);
-			if (a != 33)
+			if (a < 30)
 			{
 				printf(", ");
 			}}
