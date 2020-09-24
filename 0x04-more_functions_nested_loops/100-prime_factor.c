@@ -1,18 +1,28 @@
 #include <stdio.h>
-#include <math.h>
-
+/**
+ * main - return prime factors
+ *
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 int main(void)
 {
-	long long a, maxPrime;
-	long long n = 612852475143;
+	unsigned long int n = 612852475143;
+	unsigned long int div = 2, maxFact;
 
-	for (int i = 3; i <= sqrt(n); i = i+2)
+	while (n != 0)
 	{
-		while (n % i == 0)
+		if (n % div != 0)
+		div = div + 1;
+		else
 		{
-			maxPrime = i;
-			n = n / i;
+			maxFact = n;
+			n = n / div;
+			if (n == 1)
+			{
+				return (maxFact);
+			}
 		}
 	}
-	printf("%lld", maxPrime);
 }
