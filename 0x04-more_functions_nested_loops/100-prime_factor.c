@@ -22,6 +22,7 @@ int main(void)
 			if (n == 1)
 			{
 				printf("%lu\n", maxFact);
+				break;
 			}
 		}
 	}
