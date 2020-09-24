@@ -21,8 +21,9 @@ int main(void)
 			n = n / div;
 			if (n == 1)
 			{
-				return (maxFact);
+				printf("%lu\n", maxFact);
 			}
 		}
 	}
+	return (0);
 }
