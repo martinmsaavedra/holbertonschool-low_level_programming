@@ -38,6 +38,7 @@ void print_number(int n)
 int cantidad_cifras(int n)
 {
 	int cifras, cant_cifras;
+	cifras = n;
 
 	while (cifras / 10 != 0)
 	{
@@ -48,12 +49,12 @@ int cantidad_cifras(int n)
 	return (cant_cifras);
 }
 
-int potencia(int a)
+int potencia(int n)
 {
 	int i;
-	unsigned int pow = 1;
+	unsigned int pow = 10;
 
-	for (i = 0; i <= a; a++)
+	for (i = 0; i < n - 1; i++)
 	{
 		pow = pow * 10;
 	}
