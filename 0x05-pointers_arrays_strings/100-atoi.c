@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  *_atoi - Convert a string to integer
  *@s: the string to convert
@@ -15,7 +16,6 @@ int _atoi(char *s)
 		if (s[i] == '-')
 		{
 			sign = -1;
-			break;
 		}
 		i++;
 	}
@@ -25,8 +25,6 @@ int _atoi(char *s)
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			res = (res * 10) - (s[i] - '0');
-			if (s[i + 1] == ' ')
-				break;
 		}
 	}
 
