@@ -28,5 +28,6 @@ int main(void)
 	resto = 2772 - contador;
 	pass[i++] = resto;
 	pass[i++] = '\0';
-	return (0);
+	printf("%s\n", pass);
+return (0);
 }
