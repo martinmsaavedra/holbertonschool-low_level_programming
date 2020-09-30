@@ -28,6 +28,6 @@ int main(void)
 		}
 	}
 	pass[i] = '\0';
-	printf("%s\n", pass);
+	printf("dddddddddddddddddddddddddddH");
 	return (0);
 }
