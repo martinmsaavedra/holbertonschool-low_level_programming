@@ -17,17 +17,15 @@ int main(void)
 
 	srand(time(NULL));
 
-	while (contador != 0)
+	while (contador > 127)
 	{
-		letra = rand() % 127;
-		if (letra > 32)
-		{
-			pass[i] = letra;
-			i++;
-			contador = contador - pass[i];
-		}
+		letra = (rand() % 94) + 33;
+		pass[i] = letra;
+		contador = contador - pass[i];
+		i++;
 	}
-	pass[i] = '\0';
-	printf("dddddddddddddddddddddddddddH");
+	pass[i] = contador;
+	pass[i++] = '\0';
+	printf("%s\n", pass);
 	return (0);
 }
