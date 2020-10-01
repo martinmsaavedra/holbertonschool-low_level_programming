@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * string_toupper - changes all lowwecase letters of a string to uppercase
- *
+ * @s: string to change
  *
  * Return: String.
  **/
@@ -12,7 +12,7 @@ char *string_toupper(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] < 122 && s[i] > 97)
+		if (s[i] <= 122 && s[i] >= 97)
 		{
 			s[i] = s[i] - 32;
 		}
