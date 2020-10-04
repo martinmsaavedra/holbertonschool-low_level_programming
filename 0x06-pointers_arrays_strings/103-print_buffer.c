@@ -8,7 +8,8 @@
  */
 void print_buffer(char *b, int size)
 {
-	int i;
+	int i, n;
+	int m;
 	int j;
 	int count = 0;
 	char *buffer = b;
@@ -18,22 +19,38 @@ void print_buffer(char *b, int size)
 		for (i = 0; i < size; i = i + 10)
 		{
 			printf(" %08x: ", count);
-			printf("%02x%02x ", buffer[i], buffer[i + 1]);
-			printf("%02x%02x ", buffer[i + 2], buffer[i + 3]);
-			printf("%02x%02x ", buffer[i + 4], buffer[i + 5]);
-			printf("%02x%02x ", buffer[i + 6], buffer[i + 7]);
-			printf("%02x%02x ", buffer[i + 8], buffer[i + 9]);
+			if (!(size - count < 10))
+			{
+				for (m = 0; m < 9; m++)
+			{
+				if (m % 2 == 0)
+					printf("%02x%02x ", buffer[i + m], buffer[i + (m + 1)]);
+			}
 			for (j = count; j < count + 10; j++)
 			{
 				if (isprint(buffer[j]))
-				{
 					printf("%c", buffer[j]);
-				}
 				else
-				{
 					putchar(46);
+			}}
+			if (size - count < 10)
+			{
+				for(m = 0; m < (size - count); m++)
+				{
+					if (m % 2 == 0)
+						printf("%02x%02x ", buffer[i + m], buffer[i + (m + 1)]);
 				}
-			}
+				for (n = 0; n <= (((size - count) / 2) + 1); n++)
+				{
+					printf("  ");
+				}
+				for (j = count; j < ((count + 10) - (10 - (size - count))); j++)
+				{
+				if (isprint(buffer[j]))
+					printf("%c", buffer[j]);
+				else
+					putchar(46);
+				}}
 			count += 10;
 			printf("\n");
 		}
