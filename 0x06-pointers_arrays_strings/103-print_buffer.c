@@ -17,11 +17,12 @@ if (size > 0)
 {
 	for (i = 0; i < size; i = i + 10)
 	{
-		printf(" %08x: ", count);
 		if (buffer[i] >= 0 && buffer[i] <= 32)
 		{
-			buffer[i] = '.';
+			buffer[j] = '.';
 		}
+		printf(" %08x: ", count);
+
 		if (buffer[i] >= 33 && buffer[i] <= 255 || buffer[i] != 00)
 		{
 			printf("%02x%02x %02x%02x %02x%02x %02x%02x %02x%02x ",
