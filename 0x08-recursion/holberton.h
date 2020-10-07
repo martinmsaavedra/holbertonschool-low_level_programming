@@ -1,3 +1,4 @@
+int aux(char *, int, int);
 int _putchar(char c);
 int auxiliary(int n, int b);
 void _puts_recursion(char *s);
