@@ -43,5 +43,5 @@ int aux(char *s, int len, int count)
 		return (aux(s, len - 1, count + 1));
 	if (count >= len)
 		return (1);
-	return(0);
+	return (0);
 }
