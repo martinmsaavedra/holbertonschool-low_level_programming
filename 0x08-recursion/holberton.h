@@ -1,3 +1,4 @@
+int aux2( char *, char *);
 int aux(char *, int, int);
 int _putchar(char c);
 int auxiliary(int n, int b);
