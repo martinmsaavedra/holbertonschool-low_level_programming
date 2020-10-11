@@ -17,11 +17,13 @@ if (argc != 2)
 	printf("Error\n");
 	return (1);
 }
-saldo = atoi(argv[1]);
-if (saldo < 0)
-	printf("0\n");
 else
 {
+	saldo = atoi(argv[1]);
+	if (saldo < 0)
+		printf("0\n");
+	else
+	{
 	for (; saldo - 25 >= 0; saldo -= 25, monedas++)
 	{
 	}
@@ -36,6 +38,7 @@ else
 	}
 	if (saldo == 1)
 		monedas++;
+	}
 	if (monedas >= 1)
 		printf("%d\n", monedas);
 }
