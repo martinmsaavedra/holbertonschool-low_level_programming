@@ -24,23 +24,22 @@ else
 		printf("0\n");
 	else
 	{
-	for (; saldo - 25 >= 0; saldo -= 25, monedas++)
-	{
-	}
-	for (; saldo - 10 >= 0; saldo -= 10, monedas++)
-	{
-	}
-	for (; saldo - 5 >= 0; saldo -= 5, monedas++)
-	{
-	}
-	for (; saldo - 2 >= 0; saldo -= 2, monedas++)
-	{
-	}
-	if (saldo == 1)
+		for (; saldo - 25 >= 0; saldo -= 25, monedas++)
+		{
+		}
+		for (; saldo - 10 >= 0; saldo -= 10, monedas++)
+		{
+		}
+		for (; saldo - 5 >= 0; saldo -= 5, monedas++)
+		{
+		}
+		for (; saldo - 2 >= 0; saldo -= 2, monedas++)
+		{
+		}
+		if (saldo == 1)
 		monedas++;
-	}
-	if (monedas >= 1)
 		printf("%d\n", monedas);
+	}
 }
 	return (0);
 }
