@@ -34,9 +34,8 @@ else
 	for (; saldo - 2 >= 0; saldo -= 2, monedas++)
 	{
 	}
-	for (; saldo - 1 >= 0 ; saldo -= 1, monedas++)
-	{
-	}
+	if (saldo == 1)
+		monedas++
 	if (monedas >= 1)
 		printf("%d\n", monedas);
 }
