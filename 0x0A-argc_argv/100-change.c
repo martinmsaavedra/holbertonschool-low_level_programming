@@ -35,7 +35,7 @@ else
 	{
 	}
 	if (saldo == 1)
-		monedas++
+		monedas++;
 	if (monedas >= 1)
 		printf("%d\n", monedas);
 }
