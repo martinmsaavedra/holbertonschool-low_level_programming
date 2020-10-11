@@ -17,7 +17,12 @@ int main(int argc, char *argv[])
 	int error = 0;
 	(void)argc;
 
-	if (argv[1] != '\0')
+	if (argc < 2)
+	{
+		printf("0\n");
+		return (1);
+	}
+	else
 	{
 		for (i = 1; i < argc; i++)
 		{
@@ -36,11 +41,6 @@ int main(int argc, char *argv[])
 			printf("%d\n", sum);
 			return (0);
 		}
-	}
-	else
-	{
-		printf("0\n");
-		return (1);
 	}
 	return (0);
 }
