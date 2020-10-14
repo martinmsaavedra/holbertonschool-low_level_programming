@@ -22,7 +22,7 @@ int **alloc_grid(int width, int height)
 		}
 		for (i = 0; i < height; i++)
 		{
-			parray[i] = (int *) malloc(height * sizeof(int));
+			parray[i] = (int *) malloc(width * sizeof(int));
 			if (parray[i] == NULL)
 			{
 				for (i = i - 1; i >= 0; i--)
