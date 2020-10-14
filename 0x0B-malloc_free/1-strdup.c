@@ -34,15 +34,12 @@ char *_strdup(char *str)
 
 	size = _strlen(str);
 
-	if (size != 0)
-	{
-		parray = (char *)malloc(sizeof(char) * size + 1);
-		if (parray == NULL)
-			return (NULL);
-		for (i = 0; i < size; i++)
-			parray[i] = str[i];
-		return (parray);
-	}
-	else
+	if (size == 0)
 		return (NULL);
+	parray = (char *)malloc(sizeof(char) * size + 1);
+	if (parray == NULL)
+		return (NULL);
+	for (i = 0; i < size; i++)
+		parray[i] = str[i];
+	return (parray);
 }
