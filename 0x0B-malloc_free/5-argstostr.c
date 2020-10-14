@@ -22,6 +22,7 @@ char *argstostr(int ac, char **av)
 		{
 			cont++;
 		}
+		cont++;
 	}
 	cont = cont + ac;
 	array = (char  *)malloc(cont * sizeof(char));
