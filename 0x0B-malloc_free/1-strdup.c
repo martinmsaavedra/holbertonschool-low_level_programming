@@ -44,7 +44,10 @@ char *_strdup(char *str)
 		return (parray);
 		}
 		else
+		{
+			free (parray);
 			return (NULL);
+		}
 	}
 	else
 		return (NULL);
