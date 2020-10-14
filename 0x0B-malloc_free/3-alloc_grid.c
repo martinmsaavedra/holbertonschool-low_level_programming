@@ -15,8 +15,6 @@ int **alloc_grid(int width, int height)
 	{
 		return (NULL);
 	}
-	else
-	{
 		parray = (int **)malloc(height * sizeof(int *));
 		if (parray == NULL)
 		{
@@ -43,5 +41,4 @@ int **alloc_grid(int width, int height)
 			}
 		}
 		return (parray);
-	}
 }
