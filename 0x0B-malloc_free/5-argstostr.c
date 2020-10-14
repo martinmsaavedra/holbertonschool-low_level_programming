@@ -22,10 +22,9 @@ char *argstostr(int ac, char **av)
 		{
 			cont++;
 		}
-		cont++;
 	}
 	cont = cont + ac;
-	array = (char  *)malloc(cont * sizeof(char));
+	array = (char  *)malloc(cont * sizeof(char) + 1);
 	if (array == NULL)
 	{
 		return (NULL);
