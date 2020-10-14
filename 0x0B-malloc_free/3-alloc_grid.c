@@ -18,10 +18,17 @@ int **alloc_grid(int width, int height)
 	else
 	{
 		parray = (int **)malloc(height * sizeof(int *));
-
+		if (parray == NULL)
+		{
+			return (NULL);
+		}
 		for (i = 0; i < height; i++)
 		{
 			parray[i] = (int *) malloc(height * sizeof(int));
+			if (parray[i] == NULL)
+			{
+				return (NULL);
+			}
 		}
 		for (i = 0; i < height; i++)
 		{
