@@ -36,7 +36,7 @@ char *_strdup(char *str)
 
 	if (size != 0)
 	{
-		parray = (char *)malloc(sizeof(char) * size);
+		parray = (char *)malloc(sizeof(char) * size + 1);
 		if (parray != NULL)
 		{
 		for (i = 0; i < size; i++)
@@ -45,7 +45,6 @@ char *_strdup(char *str)
 		}
 		else
 		{
-			free (parray);
 			return (NULL);
 		}
 	}
