@@ -23,7 +23,7 @@ char *argstostr(int ac, char **av)
 			cont++;
 		}
 	}
-	cont = cont + ac;
+	cont = cont + 2*ac;
 	array = (char  *)malloc(cont * sizeof(char));
 	if (array == NULL)
 	{
@@ -37,6 +37,5 @@ char *argstostr(int ac, char **av)
 		}
 		array[l++] = '\n';
 	}
-
 	return (array);
 }
