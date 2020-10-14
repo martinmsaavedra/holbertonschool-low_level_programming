@@ -31,7 +31,9 @@ char *str_concat(char *s1, char *s2)
 	}
 	parray = (char *) malloc((c1 + c2 + 2));
 	if (parray == NULL)
+	{
 		return (NULL);
+	}
 	else
 	{
 		for (i = 0; i < c1; i++)
