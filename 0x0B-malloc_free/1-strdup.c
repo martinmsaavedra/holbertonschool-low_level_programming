@@ -37,7 +37,7 @@ char *_strdup(char *str)
 	if (size != 0)
 	{
 		parray = (char *)malloc(sizeof(char) * size);
-		if (parray != NULL)
+		if (str != NULL)
 		{
 			for (i = 0; i < size; i++)
 				parray[i] = str[i];
