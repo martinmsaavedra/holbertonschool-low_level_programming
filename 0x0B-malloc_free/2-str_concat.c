@@ -15,13 +15,15 @@ char *str_concat(char *s1, char *s2)
 	int j = 0;
 	char *parray;
 
-	if (s1[0] == '\0')
-		s1 = "";
-	if (s2[0] == '\0')
-		s2 = "";
-	else
+	if (s1[0] == NULL)
 	{
-		while (s1[i] != '\0')
+		s1 = "";
+	}
+	if (s2[0] == NULL)
+	{
+		s2 = "";
+	}
+	while (s1[i] != '\0')
 	{
 		c1++;
 		i++;
@@ -47,6 +49,5 @@ char *str_concat(char *s1, char *s2)
 			i++;
 		}
 		return (parray);
-	}
 	}
 }
