@@ -8,8 +8,7 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int c1 = 0;
-	int c2 = 0;
+	int a, b;
 	int i, j;
 	char *parray;
 
@@ -21,26 +20,26 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	for (i = 0; s1[i] != '\0', c1++, i++)
+	for (i = 0; s1[i] != '\0'; i++)
 	{
 	}
-	for (j = 0; s2[j] != '\0', c2++, j++)
+	for (j = 0; s2[j] != '\0'; j++)
 	{
 	}
-	parray = (char *) malloc((c1 + c2 + 2));
+	parray = (char *) malloc(i + j + 1);
 	if (parray == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		for (i = 0; i < c1; i++)
-			parray[i] = s1[i];
-
-		for (j = 0; j < c2; j++)
+		for (a = 0; a < i; a++)
 		{
-			parray[i] = s2[j];
-			i++;
+			parray[a] = s1[a];
+		}
+		for (b = 0; b < j; b++)
+		{
+			parray[a + b] = s2[b];
 		}
 		return (parray);
 	}
