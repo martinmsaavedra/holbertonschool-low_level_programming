@@ -59,7 +59,7 @@ void print_number(int n)
  */
 int main(int argc, char *argv[])
 {
-	long int num1, num2, mul;
+	unsigned long int num1, num2, mul;
 
 
 	if (argc != 3)
@@ -74,6 +74,6 @@ int main(int argc, char *argv[])
 	if (num2 == 0 && *argv[2] != 48)
 		printf("Error\n");
 	mul = num1 * num2;
-	printf("%ld\n" , mul);
+	printf("%lu\n", mul);
 	return (0);
 }
