@@ -8,8 +8,8 @@
  */
 int *array_range(int min, int max)
 {
-	int i;
 	int *array;
+	int i;
 
 	if (min > max)
 		return (NULL);
@@ -18,8 +18,8 @@ int *array_range(int min, int max)
 
 	if (array == NULL)
 		return (NULL);
-	
-	for (i = 0; i <= max; i++, min++)
+
+	for (i = 0; i <= max; min++, i++)
 		array[i] = min;
 
 	return (array);
