@@ -74,6 +74,6 @@ int main(int argc, char *argv[])
 	if (num2 == 0 && *argv[2] != 48)
 		printf("Error\n");
 	mul = num1 * num2;
-	printf("%d\n" , mul);
+	printf("%ld\n" , mul);
 	return (0);
 }
