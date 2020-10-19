@@ -1,6 +1,5 @@
 #include "dog.h"
 #include <stdlib.h>
-char *_strdup(char *str);
 
 /**
  *new_dog - creates a new dog
@@ -16,7 +15,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *name_;
 	char *owner_;
 
-	if ((!name) || (!owner))
+	if (!name || !owner)
 		return (NULL);
 
 	new_dog = malloc(sizeof(dog_t));
