@@ -51,29 +51,26 @@ dog_t *new_dog(char *name, float age, char *owner)
  */
 char *_strdup(char *str)
 {
-	int i;
-	char *parray;
-	int size = 0;
-	int j = 0;
+	int i = 0;
+	int length = 0;
+	char *string;
 
-	if (str == 0)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
-	else
+	while (*(str + i) != '\0')
 	{
-		while (str[j] != '\0')
-		{
-			size++;
-			j++;
-		}
-		parray = (char *)malloc(sizeof(char) * size + 1);
-		if (parray == NULL)
-			return (NULL);
-		for (i = 0; i < size; i++)
-		{
-			parray[i] = str[i];
-		}
-		return (parray);
+		length++;
+		i++;
 	}
+	string = malloc(sizeof(char) * (length + 1));
+	if (string == NULL)
+		return (NULL);
+	i = 0;
+	while (i < length)
+	{
+		*(string + i) = *(str + i);
+		i++;
+	}
+	*(string + i) = '\0';
+	return (string);
 }
