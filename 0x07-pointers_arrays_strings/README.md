@@ -8,7 +8,7 @@ Prototype: char *_memset(char *s, char b, unsigned int n);
 - Returns a pointer to the memory area s
 FYI: The standard library provides a similar function: memset. Run man memset to learn more.
 
-# 1. memcpy.
+## 1. memcpy.
 Write a function that copies memory area.
 
 Prototype: char *_memcpy(char *dest, char *src, unsigned int n);
