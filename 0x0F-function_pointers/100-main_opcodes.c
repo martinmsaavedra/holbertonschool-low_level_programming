@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
 		i++;
 		p++;
 	}
-	p++;
 	printf("%02x\n", *p);
 	return (0);
 }
