@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	{
 		printf("%02x ", *p);
 	}
-
+	p++;
 	printf("%02x\n", *p);
 	return (0);
 }
