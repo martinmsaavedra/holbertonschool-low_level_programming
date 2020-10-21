@@ -8,7 +8,6 @@
  */
 int main(int argc, char *argv[])
 {
-	int byte = atoi(argv[1]);
 	unsigned char *p = (char *)main;
 
 	if (argc != 2)
@@ -16,16 +15,18 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(1);
 	}
-	if (byte < 0)
+	if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	int i;
+	int i = 0;
 
-	for (i = 0; i < byte - 1; i++, p++)
+	while (i < (atoi(argv[1]) - 1))
 	{
 		printf("%02x ", *p);
+		i++;
+		p++;
 	}
 	p++;
 	printf("%02x\n", *p);
