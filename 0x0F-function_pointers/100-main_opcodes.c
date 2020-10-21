@@ -23,12 +23,11 @@ int main(int argc, char *argv[])
 	}
 	int i;
 
-	for (i = 0; i < byte; i++, p++)
+	for (i = 0; i < byte - 1; i++, p++)
 	{
-		printf("%02x", *p);
-		if (i != (byte - 1))
-			printf(" ");
+		printf("%02x ", *p);
 	}
-	printf("\n");
+
+	printf("%02x\n", *p);
 	return (0);
 }
