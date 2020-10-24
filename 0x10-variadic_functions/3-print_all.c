@@ -36,9 +36,11 @@ void print_float(char *str, va_list argumentList)
  */
 void print_string(char *str, va_list argumentList)
 {
-	char *strings = va_arg(argumentList, char*);
+	char *strings
 
-	if (!strings)
+		strings = va_arg(argumentList, char*);
+
+	if (strings == NULL)
 		strings = "(nil)";
 	printf("%s%s", str, strings);
 }
