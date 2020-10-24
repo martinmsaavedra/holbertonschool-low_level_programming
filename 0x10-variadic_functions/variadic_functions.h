@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #ifndef VARIADIC_H
 #define VARIADIC_H
 int sum_them_all(const unsigned int n, ...);
@@ -10,9 +9,15 @@ void print_char(char *str, va_list argumentList);
 void print_int(char *str, va_list argumentList);
 void print_float(char *str, va_list argumentList);
 void print_string(char *str, va_list argumentList);
+
+/**
+ *struct op - struct op
+ *@c: string
+ *@call_function: pointer to function
+ */
 typedef struct op
 {
 	char *c;
 	void (*call_function)();
-}op;
+} op;
 #endif
