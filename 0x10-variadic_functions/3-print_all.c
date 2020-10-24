@@ -38,7 +38,7 @@ void print_string(char *str, va_list argumentList)
 {
 	char *strings;
 
-		strings = va_arg(argumentList, char*);
+	strings = va_arg(argumentList, char *);
 
 	if (strings == NULL)
 		strings = "(nil)";
@@ -51,7 +51,7 @@ void print_string(char *str, va_list argumentList)
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	int j;
+	int j = 0;
 	va_list argumentList;
 	char *str;
 
