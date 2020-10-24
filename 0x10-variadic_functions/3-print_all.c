@@ -38,7 +38,7 @@ void print_string(char *str, va_list argumentList)
 {
 	char *strings = va_arg(argumentList, char*);
 
-	if (!*strings)
+	if (!strings)
 		strings = "(nil)";
 	printf("%s%s", str, strings);
 }
@@ -62,12 +62,11 @@ void print_all(const char * const format, ...)
 
 	va_start(argumentList, format);
 	i = 0;
-	j = 0;
 	str = "";
 
 	while (format[i] && format)
 	{
-
+		j = 0;
 		while (j < 4)
 		{
 
@@ -80,7 +79,6 @@ void print_all(const char * const format, ...)
 			j++;
 		}
 		i++;
-		j = 0;
 	}
 	printf("\n");
 	va_end(argumentList);
