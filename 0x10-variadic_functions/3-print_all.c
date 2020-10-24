@@ -50,7 +50,8 @@ void print_string(char *str, va_list argumentList)
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i, j;
+	int i = 0;
+	int j;
 	va_list argumentList;
 	char *str;
 
@@ -63,7 +64,6 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(argumentList, format);
-	i = 0;
 	str = "";
 
 	while (format[i] && format)
