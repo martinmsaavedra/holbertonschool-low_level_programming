@@ -69,7 +69,7 @@ void print_all(const char * const format, ...)
 	while (format[i] && format)
 	{
 		j = 0;
-		while (j < 4)
+		while (select_option[j].c != NULL)
 		{
 
 			if (format[i] == select_option[j].c[0])
