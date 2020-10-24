@@ -36,7 +36,7 @@ void print_float(char *str, va_list argumentList)
  */
 void print_string(char *str, va_list argumentList)
 {
-	char *strings
+	char *strings;
 
 		strings = va_arg(argumentList, char*);
 
