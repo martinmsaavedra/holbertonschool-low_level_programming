@@ -12,15 +12,19 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	va_list argumentList;
+	char *strings;
 
 	va_start(argumentList, n);
 
 		for (i = 0; i < n; i++)
 		{
-			char *strings = va_arg(argumentList, char*);
+			strings = va_arg(argumentList, char *);
 
-			if (!strings)
+			if (strings == NULL)
+			{
 				printf("(nil)");
+				break;
+			}
 			printf("%s", strings);
 			if (n == i + 1)
 				break;
