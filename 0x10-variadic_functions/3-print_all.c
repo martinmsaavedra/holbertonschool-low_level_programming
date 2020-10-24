@@ -51,6 +51,7 @@ void print_all(const char * const format, ...)
 	unsigned int i, j;
 	va_list argumentList;
 	char *str;
+
 	op select_option[] = {
 		{"c", print_char},
 		{"i", print_int},
@@ -64,10 +65,10 @@ void print_all(const char * const format, ...)
 	j = 0;
 	str = "";
 
-	while (format[i] != '\0' && format != NULL)
+	while (format[i] && format)
 	{
 
-		while (select_option[j].c != NULL)
+		while (j < 4)
 		{
 
 			if (format[i] == select_option[j].c[0])
