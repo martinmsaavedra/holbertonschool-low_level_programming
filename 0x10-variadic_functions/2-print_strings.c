@@ -19,10 +19,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			char *strings = va_arg(argumentList, char*);
 
-			if (!*strings)
-				strings = "(nil)";
+			if (!strings)
+				printf("(nil)");
 			printf("%s", strings);
-			if (i == n - 1)
+			if (n == i + 1)
 				break;
 		       printf("%s", separator);
 		}
