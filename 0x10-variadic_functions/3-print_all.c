@@ -3,7 +3,6 @@
 #include "variadic_functions.h"
 /**
  * print_char - print char
- * @str: string pointer
  * @argumentList: argumetns list
  */
 void print_char(va_list argumentList)
@@ -12,7 +11,6 @@ void print_char(va_list argumentList)
 }
 /**
  * print_int - print int
- * @str: string pointer
  * @argumentList: argumentList
  */
 void print_int(va_list argumentList)
@@ -22,7 +20,6 @@ void print_int(va_list argumentList)
 
 /**
  * print_float - print float
- * @str: string pointer
  * @argumentList: arguments list
  */
 void print_float(va_list argumentList)
@@ -31,7 +28,6 @@ void print_float(va_list argumentList)
 }
 /**
  * print_string - print string
- * @str: string pointer
  * @argumentList: arguments list
  */
 void print_string(va_list argumentList)
