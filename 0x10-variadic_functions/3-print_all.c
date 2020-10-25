@@ -32,11 +32,10 @@ void print_float(va_list argumentList)
  */
 void print_string(va_list argumentList)
 {
-	char *strings;
+	char *str;
 
-	strings = va_arg(argumentList, char *);
-
-	printf("%s", strings == NULL ? "(nil)" : strings);
+	str = va_arg(argumentList, char*);
+	printf("%s", str != NULL ? str : "(nil)");
 }
 /**
  *print_all - prints anything
@@ -44,8 +43,8 @@ void print_string(va_list argumentList)
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	int j = 0;
+	unsigned int i = 0;
+	unsigned int j = 0;
 	va_list argumentList;
 	char *str;
 
@@ -71,7 +70,6 @@ void print_all(const char * const format, ...)
 				printf("%s", str);
 				select_option[j].call_function(argumentList);
 				str = ", ";
-				break;
 			}
 			j++;
 		}
