@@ -6,18 +6,18 @@
  * @str: string pointer
  * @argumentList: argumetns list
  */
-void print_char(char *str, va_list argumentList)
+void print_char(va_list argumentList)
 {
-	printf("%s%c", str, va_arg(argumentList, int));
+	printf("%c", va_arg(argumentList, int));
 }
 /**
  * print_int - print int
  * @str: string pointer
  * @argumentList: argumentList
  */
-void print_int(char *str, va_list argumentList)
+void print_int(va_list argumentList)
 {
-	printf("%s%d", str, va_arg(argumentList, int));
+	printf("%d", va_arg(argumentList, int));
 }
 
 /**
@@ -25,16 +25,16 @@ void print_int(char *str, va_list argumentList)
  * @str: string pointer
  * @argumentList: arguments list
  */
-void print_float(char *str, va_list argumentList)
+void print_float(va_list argumentList)
 {
-	printf("%s%f", str, va_arg(argumentList, double));
+	printf("%f", va_arg(argumentList, double));
 }
 /**
  * print_string - print string
  * @str: string pointer
  * @argumentList: arguments list
  */
-void print_string(char *str, va_list argumentList)
+void print_string(va_list argumentList)
 {
 	char *strings;
 
@@ -42,7 +42,7 @@ void print_string(char *str, va_list argumentList)
 
 	if (strings == NULL)
 		strings = "(nil)";
-	printf("%s%s", str, strings);
+	printf("%s", strings);
 }
 /**
  *print_all - prints anything
@@ -74,7 +74,8 @@ void print_all(const char * const format, ...)
 
 			if (format[i] == select_option[j].c[0])
 			{
-				select_option[j].call_function(str, argumentList);
+				printf("%s", str);
+				select_option[j].call_function(argumentList);
 				str = ", ";
 				break;
 			}
