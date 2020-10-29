@@ -1,57 +1,63 @@
-#include <stdarg.h>
-#include <stdio.h>
 #include "variadic_functions.h"
+#include <stdio.h>
 /**
- * print_char - print char
- * @str: string pointer
- * @argumentList: argumetns list
+ * print_int - function to print ints
+ * @args: va_list type
+ * Return: always successful
  */
-void print_char(char *str, va_list argumentList)
+void print_int(va_list args)
 {
-	printf("%s%c", str, va_arg(argumentList, int));
-}
-/**
- * print_int - print int
- * @str: string pointer
- * @argumentList: argumentList
- */
-void print_int(char *str, va_list argumentList)
-{
-	printf("%s%d", str, va_arg(argumentList, int));
+	printf("%d", va_arg(args, int));
 }
 
 /**
- * print_float - print float
- * @str: string pointer
- * @argumentList: arguments list
+ * print_char - function to print char
+ * @args: va_list type
+ * Return: always successful
  */
-void print_float(char *str, va_list argumentList)
-{
-	printf("%s%f", str, va_arg(argumentList, double));
-}
-/**
- * print_string - print string
- * @str: string pointer
- * @argumentList: arguments list
- */
-void print_string(char *str, va_list argumentList)
-{
-	char *strings = va_arg(argumentList, char*);
 
-	if (!*strings)
-		strings = "(nil)";
-	printf("%s%s", str, strings);
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
 }
 /**
- *print_all - prints anything
- *@format: list of types of arguments passed to the function
+ * print_float - function to print floats
+ * @args: va_list type
+ * Return: always successful
+ */
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * print_string - function to print string
+ * @args: va_list type
+ * Return: always successful
+ */
+void print_string(va_list args)
+{
+	char *s;
+
+	s = va_arg(args, char*);
+	if (s == NULL)
+	{
+		s = "(nil)";
+	}
+	printf("%s", s);
+}
+
+/**
+ * print_all - function to print all inputs
+ * @format: const pointer to functionof type char
+ * Return: always successful
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i, j;
-	va_list argumentList;
-	char *str;
-	op select_option[] = {
+	int i = 0, j = 0;
+	va_list args;
+	char *seperator;
+	op options[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -59,28 +65,23 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 
-	va_start(argumentList, format);
-	i = 0;
-	j = 0;
-	str = "";
-
-	while (format[i] != '\0' && format != NULL)
+	va_start(args, format);
+	seperator = "";
+	while (format && format[i])
 	{
-
-		while (select_option[j].c != NULL)
+		j = 0;
+		while (options[j].c != NULL)
 		{
-
-			if (format[i] == select_option[j].c[0])
+			if (format[i] == options[j].c[0])
 			{
-				select_option[j].call_function(str, argumentList);
-				str = ", ";
-				break;
+				printf("%s", seperator);
+				options[j].call_function(args);
+				seperator = ", ";
 			}
 			j++;
 		}
 		i++;
-		j = 0;
 	}
 	printf("\n");
-	va_end(argumentList);
+	va_end(args);
 }
