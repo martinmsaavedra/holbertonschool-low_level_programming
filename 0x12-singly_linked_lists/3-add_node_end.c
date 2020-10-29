@@ -18,19 +18,19 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	new->str = strdup(str);
 	if (!new->str)
-        {
-                free(new);
-                return (NULL);
-        }
+	{
+		free(new);
+		return (NULL);
+	}
 	for (i = 0; str[i] != '\0'; i++)
-        {
+	{
 	}
 	new->len = i;
 	if (*head == NULL)
-        {
-                *head = new;
-                return (new);
-        }
+	{
+		*head = new;
+		return (new);
+	}
 	while (aux->next != NULL)
 	{
 		aux = aux->next;
