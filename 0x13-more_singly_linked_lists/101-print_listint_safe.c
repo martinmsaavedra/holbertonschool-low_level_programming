@@ -21,8 +21,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 	{
-		exit(98);
-		return (0);
+		return (98);
 	}
 	fp = loopexist(head, pl, pnumber);
 	if (loop == 1)
