@@ -40,7 +40,7 @@ size_t print_listint_safe(const listint_t *head)
 			number--;
 			hl = sp;
 		}
-		printf("->[%p] %d\n", (void *)hl, hl->n);
+		printf("-> [%p] %d\n", (void *)hl, hl->n);
 	}
 	else
 	{
