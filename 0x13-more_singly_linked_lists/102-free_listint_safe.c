@@ -7,10 +7,8 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-
-	int number = 0;
-	listint_t *aux = NULL;
-	listint_t *fast_ptr, *slow_ptr;
+	int number = 0, i;
+	listint_t *aux = NULL, *fast_ptr, *slow_ptr;
 	bool is_loop;
 
 	if (h == NULL)
@@ -34,15 +32,14 @@ size_t free_listint_safe(listint_t **h)
 	{
 		fast_ptr = (*h)->next;
 		slow_ptr = *h;
+		for (i = 0; i <= number + 1; i++)
+		{
+			aux = slow_ptr;
+			slow_ptr = slow_ptr->next;
+			fast_ptr = fast_ptr->next;
+			free(slow_ptr);
+		}
 	}
-	while (fast_ptr && fast_ptr < slow_ptr && is_loop)
-	{
-		aux = slow_ptr;
-		slow_ptr = slow_ptr->next;
-		fast_ptr = fast_ptr->next;
-		free(slow_ptr);
-	}
-
 	if (!is_loop)
 	{
 		while (*h)
