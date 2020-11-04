@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdbool.h>
 /**
  *free_listint_safe - free all the elements of a listint
  *@h: head of list
@@ -8,18 +9,49 @@ size_t free_listint_safe(listint_t **h)
 {
 
 	int number = 0;
-	istint_t **aux = NULL;
+	listint_t *aux = NULL;
+	listint_t *fast_ptr, *slow_ptr;
+	bool is_loop;
 
 	if (h == NULL)
-	{
 		return (0);
-	}
-	while (h)
+	fast_ptr = *h;
+	slow_ptr = *h;
+	is_loop = false;
+
+	while (fast_ptr && slow_ptr && fast_ptr->next)
 	{
-		aux = h;
-		h = &(*h)->next;
+		fast_ptr = fast_ptr->next->next;
+		slow_ptr = slow_ptr->next;
 		number++;
-		free(aux);
+		if (slow_ptr == fast_ptr)
+		{
+			is_loop = true;
+			break;
+		}
+	}
+	if (is_loop)
+	{
+		fast_ptr = (*h)->next;
+		slow_ptr = *h;
+	}
+	while (fast_ptr && fast_ptr < slow_ptr && is_loop)
+	{
+		aux = slow_ptr;
+		slow_ptr = slow_ptr->next;
+		fast_ptr = fast_ptr->next;
+		free(slow_ptr);
+	}
+
+	if (!is_loop)
+	{
+		while (*h)
+		{
+			aux = *h;
+			*h = (*h)->next;
+			number++;
+			free(aux);
+		}
 	}
 	return (number);
 }
