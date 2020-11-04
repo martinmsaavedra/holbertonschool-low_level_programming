@@ -19,10 +19,9 @@ size_t print_listint_safe(const listint_t *head)
 	int number = 0, *pnumber = &number, node = 0;
 	const listint_t *sp = head, *fp = head, *hl = NULL;
 
-	if (!head)
+	if (head == NULL)
 		exit(98);
 	fp = loopexist(head, pl, pnumber);
-
 	if (loop == 1)
 	{
 		sp = head;
