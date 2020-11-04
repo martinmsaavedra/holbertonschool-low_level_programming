@@ -21,7 +21,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 	{
-		return (98);
+		exit (98);
 	}
 	fp = loopexist(head, pl, pnumber);
 	if (loop == 1)
@@ -46,11 +46,10 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	else
 	{
-		sp = head;
-		while (sp)
+		while (head)
 		{
-			printf("[%p] %d\n", (void *)sp, sp->n);
-			sp = sp->next;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
 	}
 	return (number);
