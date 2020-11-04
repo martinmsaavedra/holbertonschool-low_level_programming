@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 
 	int loop = 0, *pl = &loop;
-	int number = 0, *pnumber = &number;
+	int node = 0, *pnumber = &number, number = 0;
 	const listint_t *sp = head, *fp = head, *hl = NULL;
 
 	if (!head)
@@ -33,11 +33,12 @@ size_t print_listint_safe(const listint_t *head)
 			number++;
 		}
 		sp = head;
-		while (number > 0)
+		node = number;
+		while (node > 0)
 		{
 			printf("[%p] %d\n", (void *)sp, sp->n);
 			sp = sp->next;
-			number--;
+			node--;
 			hl = sp;
 		}
 		printf("-> [%p] %d\n", (void *)hl, hl->n);
