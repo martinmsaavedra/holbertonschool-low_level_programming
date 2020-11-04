@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
- *print_listint_safe - prints all the elements of a listint
+ *find_listint_loop - find loops in listint
  *@head: head of list
- *Return: number of elements
+ *Return: address of start of loop
  */
 listint_t *find_listint_loop(listint_t *head)
 {
