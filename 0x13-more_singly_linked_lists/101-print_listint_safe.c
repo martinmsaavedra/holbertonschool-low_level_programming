@@ -20,7 +20,10 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *sp = head, *fp = head, *hl = NULL;
 
 	if (head == NULL)
+	{
 		exit(98);
+		return (0);
+	}
 	fp = loopexist(head, pl, pnumber);
 	if (loop == 1)
 	{
@@ -51,7 +54,7 @@ size_t print_listint_safe(const listint_t *head)
 			sp = sp->next;
 		}
 	}
-return (number);
+	return (number);
 }
 /**
  *loopexist - check if loop exist whitin list
