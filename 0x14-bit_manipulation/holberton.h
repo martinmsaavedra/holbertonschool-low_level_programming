@@ -7,4 +7,5 @@ int _putchar(char c);
 void print_binary(unsigned long int n);
 void len_binary(unsigned long int n, unsigned long int *);
 int get_bit(unsigned long int n, unsigned int index);
+int set_bit(unsigned long int *n, unsigned int index);
 #endif
