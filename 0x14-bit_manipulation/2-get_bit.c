@@ -10,6 +10,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int len = 1;
 	unsigned long int *pn = &len;
 
+	if (!n)
+		return (-1);
 	len_binary(n, pn);
 	if (index > len)
 		return (-1);
