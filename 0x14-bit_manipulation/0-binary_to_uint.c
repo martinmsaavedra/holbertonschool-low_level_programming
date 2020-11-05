@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- *print_binary - prints char
-*@arglist:argument list
-*Return: number of bytes
+ *binary_to_uint - convert binary to integer
+*@b:binary number
+*Return: number in decimal base
 */
 unsigned int binary_to_uint(const char *b)
 {
