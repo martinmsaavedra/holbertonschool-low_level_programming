@@ -6,7 +6,7 @@
  *@pnumber: pointer to number
  *Return: pointer to fast loop
  */
-const listint_t *loopexist(const listint_t *head, int *pl, int *pnumber);
+const listint_t *loopexist(const listint_t *head, int *pnumber);
 /**
  *print_listint_safe - prints all the elements of a listint
  *@head: head of list
@@ -14,8 +14,6 @@ const listint_t *loopexist(const listint_t *head, int *pl, int *pnumber);
  */
 size_t print_listint_safe(const listint_t *head)
 {
-
-	int loop = 0, *pl = &loop;
 	int number = 0, *pnumber = &number, node = 0;
 	const listint_t *sp = head, *fp = head, *hl = NULL;
 
@@ -24,8 +22,8 @@ size_t print_listint_safe(const listint_t *head)
 		return (0);
 		exit(98);
 	}
-	fp = loopexist(head, pl, pnumber);
-	if (loop == 1)
+	fp = loopexist(head, pnumber);
+	if (fp)
 	{
 		sp = head;
 		while (fp != sp)
@@ -62,21 +60,19 @@ size_t print_listint_safe(const listint_t *head)
  *@pnumber: pointer to number
  *Return: pointer to fast loop
  */
-const listint_t *loopexist(const listint_t *head, int *pl, int *pnumber)
+const listint_t *loopexist(const listint_t *head, int *pnumber)
 {
 	const listint_t *fp = head, *sp = head;
 
-	while (fp)
+	while (fp && fp->next)
 	{
 		sp = sp->next;
 		fp = fp->next->next;
 		(*pnumber)++;
 		if (sp == fp)
 		{
-			*pl = 1;
 			return (fp);
 		}
 	}
-	*pl = 0;
 	return (NULL);
 }
