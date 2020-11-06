@@ -2,7 +2,6 @@
 /**
  *loopexist - check if loop exist whitin list
  *@head: head of list
- *@pl: pointer to loop value
  *@pnumber: pointer to number
  *Return: pointer to fast loop
  */
@@ -56,7 +55,6 @@ size_t print_listint_safe(const listint_t *head)
 /**
  *loopexist - check if loop exist whitin list
  *@head: head of list
- *@pl: pointer to loop value
  *@pnumber: pointer to number
  *Return: pointer to fast loop
  */
