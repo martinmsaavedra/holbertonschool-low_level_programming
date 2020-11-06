@@ -10,7 +10,7 @@ size_t free_listint_safe(listint_t **h)
 	size_t k = 0;
 	listint_t *aux = NULL, *fast_ptr, *slow_ptr;
 
-	if (h == NULL || *h)
+	if (!h || *h == NULL)
 		return (0);
 	fast_ptr = (*h)->next;
 	slow_ptr = *h;
