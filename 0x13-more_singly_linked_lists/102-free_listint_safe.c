@@ -8,8 +8,8 @@
 size_t free_listint_safe(listint_t **h)
 {
 
-	unsigned int k = 1, i;
-	listint_t *aux = NULL, *fast_ptr, *slow_ptr,* ptr1, *ptr2;
+	unsigned int k = 1;
+	listint_t *aux = NULL, *fast_ptr, *slow_ptr;
 	bool is_loop;
 
 	if (h == NULL)
@@ -30,32 +30,23 @@ size_t free_listint_safe(listint_t **h)
 	}
 	if (is_loop)
 	{
-		ptr1 = slow_ptr;
-		ptr2 = slow_ptr;
-
-		while (ptr1->next != ptr2)
+		slow_ptr = *h;
+		fast_ptr = *h;
+		fast_ptr = fast_ptr->next;
+		while (fast_ptr && fast_ptr < slow_ptr)
 		{
-			ptr1 = ptr1->next;
+			aux = slow_ptr;
+			fast_ptr = fast_ptr->next;
+			slow_ptr = slow_ptr->next;
 			k++;
+			free(aux);
 		}
-
-		ptr1 = *h;
-		ptr2 = *h;
-		for (i = 0; i < k; i++)
-			ptr2 = ptr2->next;
-		while (ptr2 != ptr1)
-		{
-			ptr1 = ptr1->next;
-			ptr2 = ptr2->next;
-		}
-		while (ptr2->next != ptr1)
-		{
-			ptr2 = ptr2->next;
-			ptr2->next = NULL;
-		}
-		is_loop = false;
+		free(slow_ptr);
+		k++;
+		*h = NULL;
+		return (k);
 	}
-	else
+	else if (!is_loop)
 	{
 		k = 0;
 		while (*h)
