@@ -7,7 +7,7 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	unsigned int k = 0;
+	size_t k = 0;
 	listint_t *aux = NULL, *fast_ptr, *slow_ptr;
 
 	if (h == NULL)
