@@ -8,7 +8,7 @@
 size_t free_listint_safe(listint_t **h)
 {
 
-	unsigned int k = 1;
+	unsigned int k = 0;
 	listint_t *aux = NULL, *fast_ptr, *slow_ptr;
 	bool is_loop;
 
