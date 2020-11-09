@@ -22,7 +22,13 @@ int main(int ac, char *av[])
 	buffer = malloc(sizeof(char) * BUFFER_SIZE);
 	if (!buffer)
 		return (1);
-	while ((numRead = read(fo1, buffer, BUFFER_SIZE)) > 0)
+	numRead = read(fo1, buffer, BUFFER_SIZE);
+	if (!(numRead))
+	{
+                dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
+                exit (98);
+        }
+	while (numRead > 0)
 	{
 		fw = write(fo2, buffer, numRead);
 		if (!fw)
