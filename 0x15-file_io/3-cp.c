@@ -3,7 +3,7 @@
 int main(int ac, char *av[])
 {
 	char *buffer;
-	int fc, fo1, fo2, fw;
+	int fc1, fc2, fo1, fo2, fw;
 	ssize_t numRead;
 
 	if (ac != 3)
@@ -37,13 +37,13 @@ int main(int ac, char *av[])
 	fc1 = close(fo1);
 	if (fc1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s", fc1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fc1);
 		exit(100);
 	}
 	fc2 = close(fo2);
 	if (fc2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s", fc2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fc2);
 		exit(100);
 	}
 	free(buffer);
