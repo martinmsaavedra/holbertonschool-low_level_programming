@@ -1,9 +1,15 @@
 #include "holberton.h"
 #define BUFFER_SIZE 1024
+/**
+ *main - copies the content of a file to another file
+ *@ac: argument count
+ *@av: argument vector
+ *Return: 1 on success, -1 on failure
+ */
 int main(int ac, char *av[])
 {
 	char *buffer;
-	int fc1, fc2, fo1, fo2, fw;
+	int fc1, fc2, fo1, fo2;
 	ssize_t numRead;
 
 	if (ac != 3)
@@ -27,21 +33,20 @@ int main(int ac, char *av[])
 	buffer = malloc(sizeof(char) * BUFFER_SIZE);
 	if (!buffer)
 		return (0);
-	numRead = read(fo1, buffer, BUFFER_SIZE);
-	if (!(numRead))
+
+	while ((numRead = read(fo1, buffer, BUFFER_SIZE)) > 0)
 	{
-                dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
-                exit(98);
-        }
-	while (numRead > 0)
-	{
-		fw = write(fo2, buffer, numRead);
-		if (!fw)
+		if (!numRead)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
+			exit(98);
+		}
+		if (write(fo2, buffer, numRead) != numRead)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[2]);
 			exit(99);
 		}
-	}
+ 	}
 	fc1 = close(fo1);
 	if (fc1 == -1)
 	{
