@@ -54,7 +54,7 @@ int main(int ac, char **av)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(98);
 		}
-		if (numRead > 0)
+		else
 		{
 			fw = write(fo2, buffer, numRead);
 			if (fw == -1)
