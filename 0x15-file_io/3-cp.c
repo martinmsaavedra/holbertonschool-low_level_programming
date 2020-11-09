@@ -21,7 +21,7 @@ int main(int ac, char *av[])
 	}
 	buffer = malloc(sizeof(char) * BUFFER_SIZE);
 	if (!buffer)
-		return (1);
+		return (0);
 	numRead = read(fo1, buffer, BUFFER_SIZE);
 	if (!(numRead))
 	{
@@ -34,13 +34,18 @@ int main(int ac, char *av[])
 		if (!fw)
 			return (-1);
 	}
-	fc = close(fo1);
-	if (fc == -1)
+	fc1 = close(fo1);
+	if (fc1 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s", fc1);
 		exit(100);
-	fc = close(fo2);
-	if (fc == -1)
+	}
+	fc2 = close(fo2);
+	if (fc2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s", fc2);
 		exit(100);
+	}
 	free(buffer);
 return (1);
-
 }
