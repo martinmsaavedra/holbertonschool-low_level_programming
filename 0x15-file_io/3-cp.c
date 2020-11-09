@@ -1,5 +1,4 @@
 #include "holberton.h"
-#define BUFFER_SIZE 1024
 /**
  *main - copies the content of a file to another file
  *@ac: argument count
@@ -40,13 +39,13 @@ int main(int ac, char **av)
                 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
                 exit(99);
         }
-	buffer = malloc(sizeof(char) * BUFFER_SIZE);
+	buffer = malloc(sizeof(char) * 1024);
 	if (!buffer)
 		return (0);
 
 	while (numRead > 0)
 	{
-		numRead = read(fo1, buffer, BUFFER_SIZE);
+		numRead = read(fo1, buffer, 1024);
 		if (numRead == -1)
 		{
 			free(buffer);
