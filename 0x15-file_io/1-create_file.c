@@ -9,15 +9,16 @@ int create_file(const char *filename, char *text_content)
 {
 	int fo, i = 0;
 
-	if (filename == NULL)
+	if (!filename || !text_content)
 		return (-1);
+
 	while (text_content[i] != '\0')
 		i++;
 	fo = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
 	if (fo == -1)
 		return (-1);
 	if (i == 0)
-		write(fo, NULL, i);
+		write(fo, NULL, 1);
 	else
 		write(fo, text_content, i);
 	close(fo);
