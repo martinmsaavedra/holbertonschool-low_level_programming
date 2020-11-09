@@ -1,6 +1,6 @@
 #include "holberton.h"
 #define BUFFER_SIZE 1024
-int main(int ac, char **av)
+int main(int ac, char *av[])
 {
 	char *buffer;
 	int fc, fo1, fo2, fw;
@@ -8,14 +8,17 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		printf("Usage....\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
 	fo1 = open(av[1], O_RDONLY);
 	fo2 = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
-	if (!fo1 || !fo2)
+	if (!fo1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
 		exit (98);
+	}
 	buffer = malloc(sizeof(char) * BUFFER_SIZE);
 	if (!buffer)
 		return (1);
