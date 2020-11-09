@@ -13,11 +13,16 @@ int main(int ac, char *av[])
 	}
 
 	fo1 = open(av[1], O_RDONLY);
-	fo2 = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
 	if (!fo1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
-		exit (98);
+		exit(98);
+	}
+	fo2 = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (!fo2)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[2]);
+		exit(99);
 	}
 	buffer = malloc(sizeof(char) * BUFFER_SIZE);
 	if (!buffer)
@@ -26,26 +31,29 @@ int main(int ac, char *av[])
 	if (!(numRead))
 	{
                 dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
-                exit (98);
+                exit(98);
         }
 	while (numRead > 0)
 	{
 		fw = write(fo2, buffer, numRead);
 		if (!fw)
-			return (-1);
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[2]);
+			exit(99);
+		}
 	}
 	fc1 = close(fo1);
 	if (fc1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fc1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fo1);
 		exit(100);
 	}
 	fc2 = close(fo2);
 	if (fc2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fc2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fo2);
 		exit(100);
 	}
 	free(buffer);
-return (1);
+	return (1);
 }
