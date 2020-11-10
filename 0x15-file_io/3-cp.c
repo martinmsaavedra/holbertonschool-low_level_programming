@@ -23,11 +23,11 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	fo2 = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-        if (fo2 == -1)
-        {
-                dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-                exit(99);
-        }
+	if (fo2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
 	while ((numRead = read(fo1, buffer, 1024)) > 0)
 	{
 		if (fo2 < 0 || write(fo2, buffer, numRead) != numRead)
@@ -53,5 +53,6 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fc2);
 		exit(100);
 	}
+	free(buffer);
 	return (0);
 }
