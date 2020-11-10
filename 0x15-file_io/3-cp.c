@@ -30,10 +30,9 @@ int main(int ac, char **av)
 	}
 	while ((numRead = read(fo1, buffer, 1024)) > 0)
 	{
-		if (fo2 == -1 || write(fo2, buffer, numRead) != numRead)
+		if (fo2 < 0 || write(fo2, buffer, numRead) != numRead)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-			close(fo1);
 			exit(99);
 		}
 	}
