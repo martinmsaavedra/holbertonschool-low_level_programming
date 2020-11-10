@@ -33,6 +33,7 @@ int main(int ac, char **av)
 		if (fo2 < 0 || write(fo2, buffer, numRead) != numRead)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			close(fo1);
 			exit(99);
 		}
 	}
@@ -53,6 +54,5 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fc2);
 		exit(100);
 	}
-	free(buffer);
 	return (0);
 }
