@@ -1,5 +1,21 @@
 #include "holberton.h"
 /**
+ *closeF - close file
+ *@f1:file to close
+ */
+void closeF(int f1)
+{
+	int fc;
+
+	fc = close(f1);
+	if (fc == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fc);
+		exit(100);
+	}
+}
+
+/**
  *main - copies the content of a file to another file
  *@ac: argument count
  *@av: argument vector
@@ -8,7 +24,7 @@
 int main(int ac, char **av)
 {
 	char buffer[1024];
-	int fc1, fc2, fo1, fo2;
+	int fo1, fo2;
 	int numRead = 1;
 
 	if (ac != 3)
@@ -37,17 +53,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fc1 = close(fo1);
-	if (fc1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fc1);
-		exit(100);
-	}
-	fc2 = close(fo2);
-	if (fc2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fc2);
-		exit(100);
-	}
+	closeF(fo1);
+	close(fo2);
 	return (0);
 }
