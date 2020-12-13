@@ -40,9 +40,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	else if (idx - 1 == index && index != 0)
 	{
-		aux = aux->prev;
 		aux->prev->next = aux->next;
-		aux->next->prev = aux->prev;
+		if (aux->next != NULL)
+			aux->next->prev = aux->prev;
+		/*aux = aux->prev;*/
 		free(aux);
 		return (1);
 	}
