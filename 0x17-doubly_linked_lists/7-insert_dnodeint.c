@@ -1,5 +1,28 @@
 #include "lists.h"
 /**
+ *dlistint_len - calculates number of nodes
+ *@h: head of list
+ *Return: number of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t counter = 0;
+	const dlistint_t *aux;
+
+	if (h == NULL)
+	{
+		return (0);
+	}
+	aux = h;
+
+	while (aux)
+	{
+		aux = aux->next;
+		counter++;
+	}
+	return (counter);
+}
+/**
  *insert_dnodeint_at_index - function that inserts a
  *new node at a given position.
  *@h: double pointer to head
@@ -15,13 +38,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (!h)
 		return (NULL);
 
-	aux = *h;
-	while (aux != NULL)
-	{
-		aux = aux->next;
-		count++;
-	}
-	if (idx > count)
+	if (idx > dlistint_len(*h))
 	{
 		return (NULL);
 	}
@@ -35,6 +52,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	aux = *h;
 	for (i = 0 ; i < idx - 1; i++)
 		aux = aux->next;
+	
 	aux->next->prev = new;
 	aux->next = new;
 	new->n = n;
