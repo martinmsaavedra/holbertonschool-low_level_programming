@@ -1,23 +1,24 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-
+/**
+ *dlistint_len - calculates number of nodes
+ *@h: head of list
+ *Return: number of nodes
+ */
 size_t dlistint_len(const dlistint_t *h)
 {
-    size_t counter = 0;
-    const dlistint_t *aux;
+	size_t counter = 0;
+	const dlistint_t *aux;
 
-    if (h == NULL)
-    {
-        return (0);
-    }
-    aux = h;
+	if (h == NULL)
+	{
+		return (0);
+	}
+	aux = h;
 
-    while (aux)
+	while (aux)
 	{
 		aux = aux->next;
-        counter++;
+		counter++;
 	}
 	return (counter);
 }
