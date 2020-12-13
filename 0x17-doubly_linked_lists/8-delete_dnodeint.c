@@ -1,45 +1,19 @@
 #include "lists.h"
 /**
- *dlistint_len - calculates number of nodes
- *@h: head of list
- *Return: number of nodes
- */
-size_t dlistint_len(const dlistint_t *h)
-{
-	size_t counter = 0;
-	const dlistint_t *aux;
-
-	if (h == NULL)
-	{
-		return (0);
-	}
-	aux = h;
-
-	while (aux)
-	{
-		aux = aux->next;
-		counter++;
-	}
-	return (counter);
-}
-/**
- *delete_dnodeint_at_index - function that deletes the node
- *at index index of a dlistint_t linked list.
- *@head: double pointer to head
- *@index: index of node to delete
- *Return: 1 on success, -1 if it fails
+ * delete_dnodeint_at_index - deletes a node at a given index
+ * @head: pointer to start of the list
+ * @index: index of the node to delete
+ * Return: 1 success 0 not
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *aux, *temp;
+	dlistint_t *temp = *head, *aux = NULL;
 	unsigned int i = 0;
 
 	if (!head)
 		return (-1);
-
 	if (index >= dlistint_len(*head))
 		return (-1);
-
 	if (index == 0)
 	{
 		aux = *head;
@@ -64,4 +38,20 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	temp->next->prev = temp;
 	free(aux);
 	return (1);
+}
+/**
+ * dlistint_len - function that counts and returns
+ * the nodes in a Double linked list
+ * @h: pointer to first node (head)
+ * Return: total number of nodes in the list
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t count = 0;
+
+	for (; h; count++)
+	{
+		h = h->next;
+	}
+	return (count);
 }
