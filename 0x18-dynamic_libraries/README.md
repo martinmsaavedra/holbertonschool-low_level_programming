@@ -18,14 +18,14 @@ What you should learn from this project:
 * Create a script that creates a dynamic library called liball.so from all the .c files that are in the current directory.
 
 
-### [2. Either write something worth reading or do something worth writing]
+### 2. Either write something worth reading or do something worth writing
 * Write a blog post describing the differences between static and dynamic libraries. It should cover:
 
 
 ### [3. Let's call C functions from Python](./100-operations.so)
 * I know, you’re missing C when coding in Python. So let’s fix that!
 
-#### [4. Code injection: Win the Giga Millions!](./101-make_me_win.sh)
+### [4. Code injection: Win the Giga Millions!](./101-make_me_win.sh)
 * I bought a ticket for the Giga Millions and chose these numbers: 9, 8, 10, 24, 75 + 9. If you could run two commands on the same server where the Giga Millions program runs, could you make me win the Jackpot?
 
 - Our mole got us a copy of the program, you can download it here. Our mole also gave us a piece of documentation:
