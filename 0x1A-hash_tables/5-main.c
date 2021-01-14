@@ -16,6 +16,9 @@ int main(void)
     hash_table_print(ht);
     hash_table_set(ht, "c", "fun");
     hash_table_set(ht, "python", "awesome");
+    hash_table_set(ht, "python", "awesome");
+    hash_table_set(ht, "python", "awesome");
+    hash_table_set(ht, "python", "awesome");
     hash_table_set(ht, "Bob", "and Kris love asm");
     hash_table_set(ht, "N", "queens");
     hash_table_set(ht, "Asterix", "Obelix");
