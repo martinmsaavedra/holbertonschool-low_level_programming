@@ -20,7 +20,7 @@ void hash_table_print(const hash_table_t *ht)
 			break;
 		}
 	}
-	for (i = j; i < ht->size; i++)
+	for (i = j + 1; i < ht->size; i++)
 	{
 		if (ht->array[i] != NULL)
 		{
