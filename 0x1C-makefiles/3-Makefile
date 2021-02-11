@@ -9,7 +9,7 @@ SRC = main.c holberton.c
 NAME = holberton
 
 #the .o files
-OBJ = $(SRC:.o=.c)
+OBJ = $(SRC:.c=.o)
 
 RM = rm -f
 
@@ -18,13 +18,13 @@ all: $(OBJ)
 
 .PHONY: clean oclean fclean
 clean:
-	$(RM) *~, *.swp $(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
 fclean: 
-	$(RM) *~  *.swp $(NAME) $(OBJ)
+	$(RM) *~ $(NAME) $(OBJ)
 
 re:
 	oclean all
