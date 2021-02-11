@@ -14,6 +14,9 @@ OBJ = $(SRC:.c=.o)
 #Remove program
 RM = rm -f
 
+#Flags of compiler
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
