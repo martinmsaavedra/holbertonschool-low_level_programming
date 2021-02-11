@@ -9,7 +9,7 @@ SRC = main.c holberton.c
 NAME = holberton
 
 #the .o files
-OBJ = $(SRC:.o=.c)
+OBJ = $(SRC:.c=.o)
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
