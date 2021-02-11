@@ -1,0 +1,31 @@
+#Create your first useful Makefile.
+#compiler to be used
+CC = gcc
+
+#the .c files
+SRC = main.c holberton.c
+
+#name of executable
+NAME = holberton
+
+#the .o files
+OBJ = $(SRC:.o=.c)
+
+RM = rm -f
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+.PHONY: clean oclean fclean
+clean:
+	$(RM) *~, *.swp $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: 
+	$(RM) *~  *.swp $(NAME) $(OBJ)
+
+re:
+	oclean all
+	
