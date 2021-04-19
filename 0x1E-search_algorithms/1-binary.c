@@ -29,7 +29,7 @@ int binary_search_aux(int *array, int value, int start, int end, int size)
     if (size == 0)
         return (-1);
     
-    mid = (start + end) / 2;
+    mid = start + (end - start) / 2;
 
     if (array[mid] == value)
         return (mid);
