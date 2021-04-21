@@ -35,11 +35,11 @@ int int_search_aux(int *arr, int start, int end, size_t size, int value)
 
 	if (pos > size)
 	{
-		printf("Value checked arr[%ld] is out of range\n", pos);
+		printf("Value checked array[%ld] is out of range\n", pos);
 		return (-1);
 	}
 	else
-		printf("Value checked arr[%ld] = [%d]\n", pos, arr[pos]);
+		printf("Value checked array[%ld] = [%d]\n", pos, arr[pos]);
 
 	if (arr[pos] == value)
 		return (pos);
