@@ -10,7 +10,7 @@
 
 int interpolation_search(int *arr, size_t size, int value)
 {
-	if (arr == NULL || size == 0)
+	if (arr == NULL)
 		return (-1);
 
 	return (int_search_aux(arr, 0, size - 1, size, value));
@@ -30,9 +30,8 @@ int int_search_aux(int *arr, int start, int end, size_t size, int value)
 {
 	size_t pos;
 
-	pos = start + (((double)(end - start) / (arr[end] - arr[start]))
-	      * (value - arr[start]));
-	
+	pos = start + (((double)(end - start) / (arr[end] - arr[start])) * (value - arr[start]));
+
 	if (pos > size)
 	{
 		printf("Value checked arr[%ld] is out of range\n", pos);
@@ -40,7 +39,7 @@ int int_search_aux(int *arr, int start, int end, size_t size, int value)
 	}
 	else
 		printf("Value checked arr[%ld] = [%d]\n", pos, arr[pos]);
-	
+
 	if (arr[pos] == value)
 		return (pos);
 	if (arr[pos] < value)
