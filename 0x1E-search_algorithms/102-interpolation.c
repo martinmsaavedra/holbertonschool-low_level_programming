@@ -10,7 +10,7 @@
 
 int interpolation_search(int *arr, size_t size, int value)
 {
-	if (arr == NULL)
+	if (arr == NULL || size == 0)
 		return (-1);
 
 	return (int_search_aux(arr, 0, size - 1, size, value));
