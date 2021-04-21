@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-    int array[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    int array[] = {999, 1, 2, 3, 4 ,5, 6 , 7};
     size_t size = sizeof(array) / sizeof(array[0]);
 
     printf("Found %d at index: %d\n\n", 3, interpolation_search(array, size, 3));

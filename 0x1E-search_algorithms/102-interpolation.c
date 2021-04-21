@@ -32,20 +32,17 @@ int int_search_aux(int *arr, int start, int end, size_t size, int value)
 
 	pos = start + (((double)(end - start) / (arr[end] - arr[start]))
 	      * (value - arr[start]));
+	
 	if (pos == 0 && arr[pos] != value)
 		return (-1);
+	
 	if (pos > size)
 	{
 		printf("Value checked arr[%ld] is out of range\n", pos);
 		return (-1);
 	}
 	printf("Value checked arr[%ld] = [%d]\n", pos, arr[pos]);
-	if (arr[start] == value)
-		return (start);
-	if (arr[end] == value)
-		return (end);
-	if (size == 1 && arr[start] != value)
-		return (-1);
+	
 	if (arr[pos] == value)
 		return (pos);
 	if (arr[pos] < value)
