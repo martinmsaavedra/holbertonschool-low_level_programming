@@ -30,7 +30,8 @@ int int_search_aux(int *arr, int start, int end, size_t size, int value)
 {
 	size_t pos;
 
-	pos = start + (((double)(end - start) / (arr[end] - arr[start])) * (value - arr[start]));
+	pos = start + (((double)(end - start) / (arr[end] - arr[start])) *
+		       (value - arr[start]));
 
 	if (pos > size)
 	{
