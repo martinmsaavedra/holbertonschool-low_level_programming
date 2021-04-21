@@ -42,8 +42,6 @@ int int_search_aux(int *arr, int start, int end, size_t size, int value)
 		printf("Value checked array[%ld] = [%d]\n", pos, arr[pos]);
 
 	if (arr[pos] == value)
-		while (arr[pos] == value)
-			pos = pos - 1;
 		return (pos);
 	if (arr[pos] > value)
 		return (int_search_aux(arr, start, pos - 1, end - start, value));
